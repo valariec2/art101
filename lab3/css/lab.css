@@ -4,6 +4,14 @@
 .minor-section {
     padding: 10px;
     margin-bottom: 10px;
-    border: solid 1px #888;
-    background-color: #DDD8C4;
+    border: solid 1px #ababab;
+    background-color: #ffffff;
   }
+
+  #my-portrait {
+    width: 500px;
+}
+
+  #Task2 {
+   width: 500px;
+}
