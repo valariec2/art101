@@ -1,7 +1,7 @@
 // index.js - Rock Paper Scissors
 // An implementation of the game
 // Author: Valarie Situ
-//Contact: vsitu@ucsc.edu
+// Contact: vsitu@ucsc.edu
 // Date: April 21, 2024
 
 // Constants
