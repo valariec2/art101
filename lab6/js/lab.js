@@ -1,6 +1,5 @@
-// index.js - purpose and description here
-// Author: Your Name
-// Date:
+// Author: Valarie Situ <vsitu@ucsc.edu>
+// Created: 28 April
 
 // Constants
 
@@ -19,3 +18,23 @@ function main() {
 
 // let's get this party started
 main();
+
+// Define Variables
+myTransport = ["Honda Leo", "bus", "car", "train"];
+
+// create an object for my main ride
+let myMainRide = {
+  make: "Honda",
+  model: "Leo",
+  color: "Purple",
+  year: 2025,
+  age: function() {
+      return 2026 - this.year;
+  }
+};
+
+// output
+document.writeln("Kinds of transportation I use: ", MyTransport, "</br>");
+// this little trick allows us to write an object to the document
+document.writeln("My Main Ride: <pre>", 
+    JSON.stringify(myMainRide, null, '\t'), "</pre>");
