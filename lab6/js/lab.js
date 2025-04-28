@@ -34,7 +34,7 @@ let myMainRide = {
 };
 
 // output
-document.writeln("Kinds of transportation I use: ", MyTransport, "</br>");
+document.writeln("Kinds of transportation I use: ", myTransport, "</br>");
 // this little trick allows us to write an object to the document
 document.writeln("My Main Ride: <pre>", 
     JSON.stringify(myMainRide, null, '\t'), "</pre>");

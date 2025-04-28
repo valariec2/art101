@@ -14,14 +14,3 @@
     height: auto;
     border: solid 1px black;
   }
-
-  Kinds of transportation I use: Honda Leo, bus, car, train
-
-  My Main Ride:
-  {
-      "mak  e": "Honda",
-      "model": "Leo",
-      "color": "Purple",
-      "year": 2025,
-      "age": function() { ... }
-  }
