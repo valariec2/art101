@@ -1,0 +1,21 @@
+
+/* the period in a CSS selector selects an element by class, e.g., class="minor-section" */
+.lab-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .minor-section {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: solid 1px #888;
+      background-color: #DDD8C4;
+    }
+  
+    #my-portrait {
+      width: 500px;
+    }
+    
+  
