@@ -25,7 +25,7 @@ chicken.map(function(x){
 });
 
 var mapResults = chicken.map(yourFunctionName);
-console.log("Results:", mapResults);
+$("#output").html("[" + mapResults.join(", ") + "]");
 
 // this is an example function and this comment tells what it doees and what parameters are passed to it.
 
