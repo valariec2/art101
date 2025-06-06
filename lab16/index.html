@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lab 16: JSON and APIs (XKCD comic!)</title>
+  <title>Lab 16 - JSON and APIs (XKCD comic!)</title>
 
   <link rel="stylesheet" type="text/css" href="../css/site.css">
   <link rel="stylesheet" type="text/css" href="../css/homepage.css">
@@ -21,17 +21,25 @@
 			<h1>Lab 16 - JSON and APIs</h1>
 			<div class="minor-section">
 					<h2>Challenge</h2>
-					<p>In this lab, we were asked to use our debugging knowledge to fix old assignments.</p>
+					<p>In this lab, we experimented with processing JSON from an API.</p>
 			</div>
 
 			<div class="minor-section">
 					<h2>Problems + Reflection</h2>
-					<p>I had a difficult time understanding how to implement the AJAX/API to the HTML since I am new to it and I couldn't use the lecture slides to refer to. Thankfully, Dylan shared her code so I was able to reference it and I also used ChatGPT for help as well!</p>
+					<p>I had a lot of difficulties accessing the XKCD API, link given in the assignment and referencing the professor's work. 
+						Ultimately, I asked a friend outside the class for help, as well as fixing further issues through ChatGPT and W3Schools.</p>
+					
+					<p>Here is the issue I ran to:	2. CORS Policy Block
+						Error:
+						Access to XMLHttpRequest at 'https://xkcd.com/info.0.json?...' from origin 'null' has been blocked by CORS policy
+
+						📌 Cause: You are trying to access the XKCD API using the file:// protocol by opening the file directly in your browser. This triggers the browser’s CORS protection.</p>
 			</div>
 
 			<div class="minor-section">
 					<h2>Results</h2>
- 					 <div id="output"></div>
+                <button id="ajaxComic">Click Here for XKCD Comic!</button>
+                <div id="output"></div>
 			</div>
 
 		</section>

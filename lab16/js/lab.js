@@ -1,43 +1,47 @@
-// Using the core $.ajax() method
-$.ajax({
-    // The URL for the request (from the api docs)
-    url: "https://xkcd.com/info.0.json",
-    // The data to send (will be converted to a query string)
-    data: {
-    // here is where any data required by the api
-    // goes (check the api docs)
-    
-        "month": "6",
-        "num": 3098,
-        "link": "",
-        "year": "2025",
-        "news": "",
-        "safe_title": "Trojan Horse",
-        "transcript": "",
-        "alt": "Ultimately, history would imperfectly record the story of the Foal of Troy.",
-        "img": "https://imgs.xkcd.com/comics/trojan_horse.png",
-        "title": "Trojan Horse",
-        "day": "4"
-      
-    },
-    // Whether this is a POST or GET request
+/*
+ * Author: Valarie Situ 
+ * Created: 2nd June
+ * License: Public Domain
+ */
+
+$("#ajaxComic").click(function () {
+  // Store latest comic number
+  let latestComicNum;
+  let randomComicURL;
+
+  // First request: get the latest comic to find the max comic number
+  $.ajax({
+    url: "https://corsproxy.io/?https://xkcd.com/info.0.json",
     type: "GET",
-    // The type of data we expect back
-    dataType : "json",
-    // What do we do when the api call is successful
-    // all the action goes in here
-    success: function(comicObj) {
-        console.log(comicObj);
-        let html = `
-          <h3>${comicObj.title}</h3>
-          <img src="${comicObj.img}" alt="${comicObj.alt}" title="${comicObj.alt}">
-          <p>${comicObj.alt}</p>
-        `;
-        $("#output").html(html);
-      },
-    // What we do if the api call fails
+    dataType: "json",
+    success: function (data) {
+      latestComicNum = data.num;
+      let randomNum = Math.floor(Math.random() * latestComicNum);
+      randomComicURL = `https://corsproxy.io/?https://xkcd.com/${randomNum}/info.0.json`;
+
+      // Second request: get a random comic
+      $.ajax({
+        url: randomComicURL,
+        type: "GET",
+        dataType: "json",
+        success: function (comicData) {
+          let title = comicData.title;
+          let image = comicData.img;
+          let altText = comicData.alt;
+
+          $("#output").html(`
+            <h3>${title}</h3>
+            <img src="${image}" alt="${altText}" title="${altText}">
+            <p>${altText}</p>
+          `);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log("Comic Fetch Error:", textStatus, errorThrown);
+        }
+      });
+    },
     error: function (jqXHR, textStatus, errorThrown) {
-    // do stuff
-    console.log("Error:", textStatus, errorThrown);
+      console.log("Initial Request Error:", textStatus, errorThrown);
     }
-    })
+  });
+});
